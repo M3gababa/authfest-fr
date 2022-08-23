@@ -172,14 +172,11 @@
             <h2 class="my-5 text-center">What can I do next?</h2>
 
             <div class="row">
-              <div class="col-md-5 mb-4">
+              <div id="challenge1Section" class="col-md-5 mb-4">
                 <h6 class="mb-3">
-                  <a href="https://auth0.com/docs/connections">
-                    <i class="fas fa-link"></i> Configure other identity
-                    providers
-                  </a>
+                    Challenge 1: Custom Application Sign-on
                 </h6>
-                <div id="challenge1Section" style="width: 100%; float: right">
+                <div  style="width: 100%; float: right">
                   <!-- Tab links -->
                   <div class="tab">
                     <button
@@ -196,13 +193,7 @@
                     >
                       Access Token
                     </button>
-                    <button
-                      id="signOutBtn"
-                      class="tablinks"
-                      onclick="signOut(signIn)"
-                    >
-                      Sign Out
-                    </button>
+
                   </div>
 
                   <!-- Tab content -->
@@ -218,19 +209,10 @@
 
               <div class="col-md"></div>
 
-              <div class="col-md-5 mb-4">
+              <div id="challenge2Section" class="col-md-5 mb-4">
                 <h6 class="mb-3">
-                    <i class="fas fa-link"></i> Enable Multifactor
-                    Authentication
-                  </a>
+                    Challenge 2: Protect The API
                 </h6>
-                <div
-                  id="challenge2Section"
-                  style="width: 0%; float: left; display: none"
-                >
-                  <div>
-                    <strong>Challenge 2: Protect The API</strong>
-                  </div>
                   <div>
                     Public API
                     <a
