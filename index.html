@@ -30,7 +30,6 @@
       href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
     />
     <script src="/script.js" type="text/javascript"></script>
-
   </head>
 
   <body class="h-100">
@@ -171,14 +170,12 @@
           </div>
 
           <div class="next-steps auth-visible hidden">
-            <h2 class="my-5 text-center">What can I do next?</h2>
+            <h2 class="my-5 text-center">Congratulations, you've logged in!</h2>
 
             <div class="row">
               <div id="challenge1Section" class="col-md-5 mb-4">
-                <h6 class="mb-3">
-                    Challenge 1: Custom Application Sign-on
-                </h6>
-                <div  style="width: 100%; float: right">
+                <h6 class="mb-3">Challenge 1: Custom Application Sign-on</h6>
+                <div style="width: 100%; float: right">
                   <!-- Tab links -->
                   <div class="tab">
                     <button
@@ -195,7 +192,6 @@
                     >
                       Access Token
                     </button>
-
                   </div>
 
                   <!-- Tab content -->
@@ -212,35 +208,29 @@
               <div class="col-md"></div>
 
               <div id="challenge2Section" class="col-md-5 mb-4">
-                <h6 class="mb-3">
-                    Challenge 2: Protect The API
-                </h6>
-                  <div>
-                    Public API
-                    <a
-                      href="javascript: handlePublicAPICall(baseAPIUrl, signIn)"
-                      >Click Here to test</a
-                    >
-                  </div>
-                  <div>
-                    Private API (Requires Valid Okta JWT)
-                    <a
-                      href="javascript: handlePrivateAPICall(baseAPIUrl, signIn)"
-                      >Click Here to test</a
-                    >
-                  </div>
-                  <div>
-                    Access API (Requires Valid Okta JWT with claim from Token
-                    Hook)
-                    <a
-                      href="javascript: handleAccessAPICall(baseAPIUrl, signIn)"
-                      >Click Here to test</a
-                    >
-                  </div>
-                  <div>Results:</div>
-                  <div>
-                    <textarea id="apiResultsDisplay"></textarea>
-                  </div>
+                <h6 class="mb-3">Challenge 2: Protect The API</h6>
+                <div>
+                  Public API
+                  <a href="javascript: handlePublicAPICall(baseAPIUrl, signIn)"
+                    >Click Here to test</a
+                  >
+                </div>
+                <div>
+                  Private API (Requires Valid Okta JWT)
+                  <a href="javascript: handlePrivateAPICall(baseAPIUrl, signIn)"
+                    >Click Here to test</a
+                  >
+                </div>
+                <div>
+                  Access API (Requires Valid Okta JWT with claim from Token
+                  Hook)
+                  <a href="javascript: handleAccessAPICall(baseAPIUrl, signIn)"
+                    >Click Here to test</a
+                  >
+                </div>
+                <div>Results:</div>
+                <div>
+                  <textarea id="apiResultsDisplay"></textarea>
                 </div>
               </div>
             </div>
@@ -280,15 +270,13 @@
     </div>
 
     <script type="text/javascript">
-    
-    //Challenge 2: Uncomment this to display Challenge 2 dashboard
-    showChallenge2();
+      //Challenge 2: Uncomment this to display Challenge 2 dashboard
+      showChallenge2();
 
-    //Challenge 2: Set Glitch API URL here
-    var baseAPIUrl = "https://funauth-cic-api2.glitch.me";
-    
-	</script>
-  
+      //Challenge 2: Set Glitch API URL here
+      var baseAPIUrl = "https://funauth-cic-api2.glitch.me";
+    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.auth0.com/js/auth0-spa-js/1.19/auth0-spa-js.production.js"></script>
