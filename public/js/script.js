@@ -1,10 +1,10 @@
 /* All support JS goes here */
 
 /* Challenge 2: Protect The API Calls */
-function handlePublicAPICall(baseUrl, signIn) {
+function handlePublicAPICall(baseUrl) {
   console.log("handlePublicAPICall()");
-  document.getElementById("apiResultsDisplay").innerHTML = "";
-  getJson(baseUrl + "/api/public", signIn, function (json) {
+  document.getElementById("public").innerHTML = "";
+  getJson(baseUrl + "/api/public", function (json) {
     document.getElementById("apiResultsDisplay").innerHTML = JSON.stringify(
       JSON.parse(json),
       null,
@@ -13,6 +13,35 @@ function handlePublicAPICall(baseUrl, signIn) {
   });
 }
 
+function getJson(url, signIn, callback) {
+  console.log("getJson('" + url + "')");
+  document.getElementById("apiResultsDisplay").innerHTML = "";
+
+  const httpRequest = new XMLHttpRequest();
+  httpRequest.open("GET", url);
+  httpRequest.onreadystatechange = function () {
+    if (httpRequest.readyState == 4) {
+      console.log(httpRequest.responseText);
+      callback(httpRequest.responseText);
+    }
+  };
+  httpRequest.setRequestHeader("Access-Control-Allow-Origin", "*");
+  httpRequest.responseType = "text";
+
+  signIn.authClient.tokenManager
+    .get("accessToken")
+    .then(function (token) {
+      console.log("Got access Token!");
+      console.log(token);
+
+      httpRequest.setRequestHeader("Authorization", "Bearer " + token.value);
+      httpRequest.send();
+    })
+    .catch(function (err) {
+      console.log("Unable to retrieve accessToken from local storage");
+    });
+}
+/*
 function handlePrivateAPICall(baseUrl, signIn) {
   console.log("handlePrivateAPICall()");
   document.getElementById("apiResultsDisplay").innerHTML = "";
@@ -36,7 +65,7 @@ function handleAccessAPICall(baseUrl, signIn) {
     );
   });
 }
-
+*/
 function getJson(url, signIn, callback) {
   console.log("getJson('" + url + "')");
   document.getElementById("apiResultsDisplay").innerHTML = "";
