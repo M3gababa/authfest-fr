@@ -4,25 +4,16 @@
 function handlePublicAPICall(baseUrl) {
   console.log("handlePublicAPICall()");
   document.getElementById("publicAPI-response").innerHTML = "";
-  getJsonNA(baseUrl + "/api/public", function (json) {
-    document.getElementById("publicAPI-response").innerHTML = JSON.stringify(
-      JSON.parse(json),
-      null,
-      4
-    );
-  });
+  getJsonTest(baseUrl + "/api/public");
 }
 
-function getJsonNA(url, callback) {
-  console.log("getJson('" + url + "')");
-  document.getElementById("publicAPI-response").innerHTML = "";
-
+function getJsonTest(url) {
+  console.log("getJsonTest('" + url + "')");
   const httpRequest = new XMLHttpRequest();
   httpRequest.open("GET", url);
   httpRequest.onreadystatechange = function () {
     if (httpRequest.readyState == 4) {
       console.log(httpRequest.responseText);
-      callback(httpRequest.responseText);
     }
   };
   httpRequest.setRequestHeader("Access-Control-Allow-Origin", "*");
