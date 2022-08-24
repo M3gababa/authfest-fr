@@ -9,7 +9,7 @@ const login = async (targetUrl) => {
     console.log("Logging in", targetUrl);
 
     const options = {
-      redirect_uri: window.location.origin
+      redirect_uri: window.location.origin,
     };
 
     if (targetUrl) {
@@ -29,7 +29,7 @@ const logout = () => {
   try {
     console.log("Logging out");
     auth0.logout({
-      returnTo: window.location.origin
+      returnTo: window.location.origin,
     });
   } catch (err) {
     console.log("Log out failed", err);
@@ -50,7 +50,7 @@ const configureClient = async () => {
 
   auth0 = await createAuth0Client({
     domain: config.domain,
-    client_id: config.clientId
+    client_id: config.clientId,
   });
 };
 
@@ -77,13 +77,14 @@ const callApi = async (baseUrl, endpoint) => {
     const token = await auth0.getTokenSilently();
 
     const response = await fetch(baseUrl + endpoint, {
-      mode: 'no-cors',
+      mode: "no-cors",
       headers: {
-        Authorization: `Bearer ${token}`
-      }
+        Authorization: `Bearer ${token}`,
+      },
     });
 
     const responseData = await response.json();
+    console.log(responseData);
     const responseElement = document.getElementById("api-call-result");
 
     responseElement.innerText = JSON.stringify(responseData, {}, 2);
