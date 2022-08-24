@@ -2,6 +2,7 @@ dependencies:
   express: 4.18.1
   express-jwt: 7.7.5
   helmet: 3.23.3
+  jose: 4.9.0
   jwks-rsa: 2.1.4
   morgan: 1.10.0
 devDependencies:
@@ -1207,6 +1208,10 @@ packages:
       node: '>=10.13.0 < 13 || >=13.7.0'
     resolution:
       integrity: sha512-BAiDNeDKTMgk4tvD0BbxJ8xHEHBZgpeRZ1zGPPsitSyMgjoMWiLGYAE7H7NpP5h0lPppQajQs871E8NHUrzVPA==
+  /jose/4.9.0:
+    dev: false
+    resolution:
+      integrity: sha512-RgaqEOZLkVO+ViN3KkN44XJt9g7+wMveUv59sVLaTxONcUPc8ZpfqOCeLphVBZyih2dgkvZ0Ap1CNcokvY7Uyw==
   /jsonwebtoken/8.5.1:
     dependencies:
       jws: 3.2.2
@@ -2244,6 +2249,7 @@ specifiers:
   express: ^4.18.1
   express-jwt: ^7.7.5
   helmet: ^3.23.3
+  jose: ^4.9.0
   jwks-rsa: ^2.1.4
   morgan: ^1.10.0
   nodemon: ^1.19.4

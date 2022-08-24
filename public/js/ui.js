@@ -61,7 +61,8 @@ const updateUI = async () => {
     const isAuthenticated = await auth0.isAuthenticated();
 
     if (isAuthenticated) {
-      const access = await auth0.getTokenSilently();
+      const access = parseJwt(await auth0.getTokenSilently());
+      
       const user = await auth0.getUser();
 
       document.getElementById("ipt-access-token").innerText = JSON.stringify(
@@ -105,4 +106,14 @@ window.onpopstate = (e) => {
   if (e.state && e.state.url && router[e.state.url]) {
     showContentFromUrl(e.state.url);
   }
+};
+
+function parseJwt (token) {
+    var base64Url = token.split('.')[1];
+    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    return JSON.parse(jsonPayload);
 };
