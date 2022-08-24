@@ -174,58 +174,21 @@
             <div class="row">
               <div id="challenge1Section" class="col-md-5 mb-4">
                 <h6 class="mb-3">Challenge 1: Custom Application Sign-on</h6>
-                  <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Access Token</a></li>
-    <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
-    <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
-    <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
-  </ul>
+                <ul class="nav nav-tabs">
+                  <li class="active">
+                    <a data-toggle="tab" href="#accessToken">Access Token</a>
+                  </li>
+                  <li><a data-toggle="tab" href="#idToken">ID Token</a></li>
+                </ul>
 
-  <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-      <h3>HOME</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-    <div id="menu1" class="tab-pane fade">
-      <h3>Menu 1</h3>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div id="menu2" class="tab-pane fade">
-      <h3>Menu 2</h3>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-    </div>
-    <div id="menu3" class="tab-pane fade">
-      <h3>Menu 3</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-    </div>
-  </div>
-
-                <div style="width: 100%; float: right">
-                  <!-- Tab links -->
-                  <div class="tab">
-                    <button
-                      id="showIdTokenTabBtn"
-                      class="tablinks"
-                      onclick="openTokenTab(event, 'idTokenTab')"
-                    >
-                      Id Token
-                    </button>
-                    <button
-                      id="showAccessTokenTabBtn"
-                      class="tablinks"
-                      onclick="openTokenTab(event, 'accessTokenTab')"
-                    >
-                      Access Token
-                    </button>
+                <div class="tab-content">
+                  <div id="accessToken" class="tab-pane fade in active">
+                    <pre class="rounded">
+                <code id="accessToken-data" class="json"></code></pre>
                   </div>
-
-                  <!-- Tab content -->
-                  <div id="idTokenTab" class="tabcontent">
-                    <p><textarea id="idTokenDisplay"></textarea></p>
-                  </div>
-
-                  <div id="accessTokenTab" class="tabcontent">
-                    <p><textarea id="accessTokenDisplay"></textarea></p>
+                  <div id="idToken" class="tab-pane fade">
+                    <pre class="rounded">
+                <code id="idToken-data" class="json"></code></pre>
                   </div>
                 </div>
               </div>
@@ -234,28 +197,42 @@
 
               <div id="challenge2Section" class="col-md-5 mb-4">
                 <h6 class="mb-3">Challenge 2: Protect The API</h6>
-                <div>
-                  Public API
-                  <a href="javascript: handlePublicAPICall(baseAPIUrl, signIn)"
-                    >Click Here to test</a
-                  >
-                </div>
-                <div>
-                  Private API (Requires Valid Okta JWT)
-                  <a href="javascript: handlePrivateAPICall(baseAPIUrl, signIn)"
-                    >Click Here to test</a
-                  >
-                </div>
-                <div>
-                  Access API (Requires Valid Okta JWT with claim from Token
-                  Hook)
-                  <a href="javascript: handleAccessAPICall(baseAPIUrl, signIn)"
-                    >Click Here to test</a
-                  >
-                </div>
-                <div>Results:</div>
-                <div>
-                  <textarea id="apiResultsDisplay"></textarea>
+
+                <ul class="nav nav-tabs">
+                  <li class="active">
+                    <a data-toggle="tab" href="#publicAPI">Public API</a>
+                  </li>
+                  <li>
+                    <a data-toggle="tab" href="#privateAPI">Private API</a>
+                  </li>
+                  <li><a data-toggle="tab" href="#accessAPI">Access API</a></li>
+                </ul>
+
+                <div class="tab-content">
+                  <div id="publicAPI" class="tab-pane fade in active">
+                    <a
+                      href="javascript: handlePublicAPICall(baseAPIUrl, signIn)"
+                      >Click Here to test</a
+                    >
+                    <pre class="rounded">
+                <code id="publicAPI-response" class="json"></code></pre>
+                  </div>
+                  <div id="privateAPI" class="tab-pane fade">
+                    <a
+                      href="javascript: handlePrivateAPICall(baseAPIUrl, signIn)"
+                      >Click Here to test</a
+                    >
+                    <pre class="rounded">
+                <code id="privateAPI-response" class="json"></code></pre>
+                  </div>
+                  <div id="accessAPI" class="tab-pane fade">
+                    <a
+                      href="javascript: handleAccessAPICall(baseAPIUrl, signIn)"
+                      >Click Here to test</a
+                    >
+                    <pre class="rounded">
+                <code id="accessAPI-response" class="json"></code></pre>
+                  </div>
                 </div>
               </div>
             </div>
