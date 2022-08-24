@@ -29,7 +29,6 @@
       rel="stylesheet"
       href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
     />
-    <script src="js/script.js"></script>
   </head>
 
   <body class="h-100">
@@ -195,54 +194,37 @@
               </div>
 
               <div class="col-md"></div>
-              
+
               <!-- Begin Challenge 2: API Section -->
               <div id="challenge2Section" class="col-md-5 mb-4">
                 <h6 class="mb-3">Challenge 2: Protect The API</h6>
 
-                     <div class="tab-content">
-                  <div id="publicAPI" class="tab-pane fade in active">
-                    <a onclick="handlePublicAPICall(baseAPIUrl)"
-                      >Click Here to test</a
+                <div>
+                  <h1>External API</h1>
+                  <p>
+                    Ping an external API by clicking the button below. This will
+                    call the external API using an access token, and the API
+                    will validate it using the API's audience value.
+                  </p>
+
+                  <p class="mb-5">
+                    <a href="#" class="btn btn-primary mt-5" id="call-api"
+                      >Ping API</a
                     >
-                    <pre class="rounded">
-                <code id="publicAPI-response" class="json"></code></pre>
-                  </div>
-                  <div id="content-external-api" class="tab-pane fade in active">
-                    <h1>External API</h1>
-                    <p>
-                      Ping an external API by clicking the button below. This
-                      will call the external API using an access token, and the
-                      API will validate it using the API's audience value.
-                    </p>
+                  </p>
 
-                    <p class="mb-5">
-                      <a href="#" class="btn btn-primary mt-5" id="call-api"
-                        >Ping API</a
-                      >
-                    </p>
-
-                    <div class="result-block-container">
-                      <div class="result-block reset-on-nav">
-                        <h6 class="muted">Result</h6>
-                        <pre>
+                  <div class="result-block-container">
+                    <div class="result-block reset-on-nav">
+                      <h6 class="muted">Result</h6>
+                      <pre>
                 <code class="js rounded" id="api-call-result">JSON.stringify(apiMessage, null, 2)</code>
               </pre>
-                      </div>
                     </div>
-                  </div>
-                  <div id="accessAPI" class="tab-pane fade">
-                    <a
-                      href="javascript: handleAccessAPICall(baseAPIUrl, signIn)"
-                      >Click Here to test</a
-                    >
-                    <pre class="rounded">
-                <code id="accessAPI-response" class="json"></code></pre>
                   </div>
                 </div>
               </div>
-              <!-- End Challenge 2: API Section -->
 
+              <!-- End Challenge 2: API Section -->
             </div>
           </div>
         </div>
@@ -279,13 +261,6 @@
       </footer>
     </div>
 
-    <script type="text/javascript">
-      //Challenge 2: Uncomment this to display Challenge 2 dashboard
-      showChallenge2();
-
-      //Challenge 2: Set Glitch API URL here
-      var baseAPIUrl = "https://funauth-cic-api2.glitch.me";
-    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
@@ -293,5 +268,10 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/app.js"></script>
+    <script type="text/javascript">
+      //Challenge 2: Set Glitch API URL here
+      var baseAPIUrl = "https://funauth-cic-api.glitch.me";
+    </script>
+
   </body>
 </html>

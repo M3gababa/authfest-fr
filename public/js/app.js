@@ -76,7 +76,7 @@ const callApi = async () => {
   try {
     const token = await auth0.getTokenSilently();
 
-    const response = await fetch("/api/external", {
+    const response = await fetch("https://funauth-cic-api.glitch.me/api/public", {
       headers: {
         Authorization: `Bearer ${token}`
       }
