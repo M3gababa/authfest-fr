@@ -174,26 +174,15 @@
             <div class="row">
               <div id="challenge1Section" class="col-md-5 mb-4">
                 <h6 class="mb-3">Challenge 1: Custom Application Sign-on</h6>
-                <ul class="nav nav-tabs">
-                  <li class="active">
-                    <a data-toggle="tab" href="#accessToken">Access Token</a>
-                  </li>
-                  <li><a data-toggle="tab" href="#idToken">ID Token</a></li>
-                </ul>
+                <p>Access Token</p>
 
-                <div class="tab-content">
-                  <div id="accessToken" class="tab-pane fade in active">
-                    <pre class="rounded">
-                <code id="accessToken-data" class="json"></code></pre>
-                  </div>
-                  <div id="idToken" class="tab-pane fade">
-                    <pre class="rounded">
-                <code id="idToken-data" class="json"></code></pre>
-                  </div>
-                </div>
+                <pre class="rounded">
+                <code id="ipt-access-token" class="json"></code></pre>
+                <pre class="rounded">
+                                <p>ID Token</p>
+                
+                <code id="profile-data" class="json"></code></pre>
               </div>
-
-              <div class="col-md"></div>
 
               <!-- Begin Challenge 2: API Section -->
               <div id="challenge2Section" class="col-md-5 mb-4">
@@ -208,12 +197,16 @@
                   </p>
 
                   <p class="mb-5">
-                    <a onclick="callApi(baseAPIUrl, '/api/public')" class="btn btn-primary mt-5"
+                    <a
+                      onclick="callApi(baseAPIUrl, '/api/public')"
+                      class="btn btn-primary mt-5"
                       >Ping Public API</a
                     >
                   </p>
                   <p class="mb-5">
-                    <a onclick="callApi(baseAPIUrl, '/api/private')" class="btn btn-primary mt-5"
+                    <a
+                      onclick="callApi(baseAPIUrl, '/api/private')"
+                      class="btn btn-primary mt-5"
                       >Ping Private API</a
                     >
                   </p>
@@ -265,7 +258,6 @@
       </footer>
     </div>
 
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.auth0.com/js/auth0-spa-js/1.19/auth0-spa-js.production.js"></script>
@@ -276,6 +268,5 @@
       //Challenge 2: Set Glitch API URL here
       var baseAPIUrl = "https://funauth-cic-api.glitch.me";
     </script>
-
   </body>
 </html>
