@@ -77,6 +77,7 @@ const callApi = async (baseUrl, endpoint) => {
     const token = await auth0.getTokenSilently();
 
     const response = await fetch(baseUrl + endpoint, {
+      mode: 'no-cors',
       headers: {
         Authorization: `Bearer ${token}`
       }
