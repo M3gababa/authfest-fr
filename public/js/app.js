@@ -81,6 +81,7 @@ const callApi = async (baseUrl, endpoint) => {
       headers: {
         Authorization: `Bearer ${token}`,
       },
+      referrerPolicy: 'no-referrer'
     });
 
     const responseData = await response.json();
