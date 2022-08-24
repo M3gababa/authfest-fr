@@ -3,7 +3,7 @@ const router = {
   "/": () => showContent("content-home"),
   "/profile": () =>
     requireAuth(() => showContent("content-profile"), "/profile"),
-  "/login": () => login()
+  "/login": () => login(),
 };
 
 //Declare helper functions
@@ -61,7 +61,20 @@ const updateUI = async () => {
     const isAuthenticated = await auth0.isAuthenticated();
 
     if (isAuthenticated) {
+      const access = await auth0.getTokenSilently();
       const user = await auth0.getUser();
+
+      document.getElementById("ipt-access-token").innerText = JSON.stringify(
+        access,
+        null,
+        2
+      );
+
+      document.getElementById("ipt-user-profile").innerText = JSON.stringify(
+        user,
+        null,
+        2
+      );
 
       document.getElementById("profile-data").innerText = JSON.stringify(
         user,
