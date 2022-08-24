@@ -69,6 +69,32 @@ const requireAuth = async (fn, targetUrl) => {
   return login(targetUrl);
 };
 
+/**
+ * Calls the API endpoint with an authorization token
+ */
+const callApi = async () => {
+  try {
+    const token = await auth0.getTokenSilently();
+
+    const response = await fetch("/api/external", {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+
+    const responseData = await response.json();
+    const responseElement = document.getElementById("api-call-result");
+
+    responseElement.innerText = JSON.stringify(responseData, {}, 2);
+
+    document.querySelectorAll("pre code").forEach(hljs.highlightBlock);
+
+    eachElement(".result-block", (c) => c.classList.add("show"));
+  } catch (e) {
+    console.error(e);
+  }
+};
+
 // Will run when page finishes loading
 window.onload = async () => {
   await configureClient();
