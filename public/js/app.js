@@ -72,11 +72,11 @@ const requireAuth = async (fn, targetUrl) => {
 /**
  * Calls the API endpoint with an authorization token
  */
-const callApi = async () => {
+const callApi = async (baseUrl, endpoint) => {
   try {
     const token = await auth0.getTokenSilently();
 
-    const response = await fetch("https://funauth-cic-api.glitch.me/api/public", {
+    const response = await fetch(baseUrl + endpoint, {
       headers: {
         Authorization: `Bearer ${token}`
       }
