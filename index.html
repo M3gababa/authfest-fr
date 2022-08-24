@@ -195,21 +195,12 @@
               </div>
 
               <div class="col-md"></div>
-
+              
+              <!-- Begin Challenge 2: API Section -->
               <div id="challenge2Section" class="col-md-5 mb-4">
                 <h6 class="mb-3">Challenge 2: Protect The API</h6>
 
-                <ul class="nav nav-tabs">
-                  <li class="active">
-                    <a data-toggle="tab" href="#publicAPI">Public API</a>
-                  </li>
-                  <li>
-                    <a data-toggle="tab" href="#privateAPI">Private API</a>
-                  </li>
-                  <li><a data-toggle="tab" href="#accessAPI">Access API</a></li>
-                </ul>
-
-                <div class="tab-content">
+                     <div class="tab-content">
                   <div id="publicAPI" class="tab-pane fade in active">
                     <a onclick="handlePublicAPICall(baseAPIUrl)"
                       >Click Here to test</a
@@ -217,13 +208,28 @@
                     <pre class="rounded">
                 <code id="publicAPI-response" class="json"></code></pre>
                   </div>
-                  <div id="privateAPI" class="tab-pane fade">
-                    <a
-                      href="javascript: handlePrivateAPICall(baseAPIUrl, signIn)"
-                      >Click Here to test</a
-                    >
-                    <pre class="rounded">
-                <code id="privateAPI-response" class="json"></code></pre>
+                  <div id="content-external-api" class="tab-pane fade in active">
+                    <h1>External API</h1>
+                    <p>
+                      Ping an external API by clicking the button below. This
+                      will call the external API using an access token, and the
+                      API will validate it using the API's audience value.
+                    </p>
+
+                    <p class="mb-5">
+                      <a href="#" class="btn btn-primary mt-5" id="call-api"
+                        >Ping API</a
+                      >
+                    </p>
+
+                    <div class="result-block-container">
+                      <div class="result-block reset-on-nav">
+                        <h6 class="muted">Result</h6>
+                        <pre>
+                <code class="js rounded" id="api-call-result">JSON.stringify(apiMessage, null, 2)</code>
+              </pre>
+                      </div>
+                    </div>
                   </div>
                   <div id="accessAPI" class="tab-pane fade">
                     <a
@@ -235,6 +241,8 @@
                   </div>
                 </div>
               </div>
+              <!-- End Challenge 2: API Section -->
+
             </div>
           </div>
         </div>
