@@ -51,7 +51,8 @@ const configureClient = async () => {
   auth0 = await createAuth0Client({
     domain: config.domain,
     client_id: config.clientId,
-    audience: config.audience
+    // Uncomment the line below to add the API audience to the token
+    // audience: config.audience
   });
 };
 
@@ -79,8 +80,8 @@ const callApi = async (baseURL, endpoint) => {
 
     const response = await fetch(baseURL + endpoint, {
       headers: {
-        'Authorization': `Bearer ${token}`
-      }
+        Authorization: `Bearer ${token}`,
+      },
     });
 
     const responseData = await response.json();

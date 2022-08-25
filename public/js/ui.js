@@ -64,13 +64,13 @@ const updateUI = async () => {
       const access = parseJwt(await auth0.getTokenSilently());
       
       const user = await auth0.getUser();
-
+/*
       document.getElementById("ipt-access-token").innerText = JSON.stringify(
         access,
         null,
         2
       );
-
+*/
       document.getElementById("ipt-user-profile").innerText = JSON.stringify(
         user,
         null,
