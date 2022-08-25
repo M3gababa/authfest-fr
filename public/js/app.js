@@ -87,7 +87,7 @@ const callApi = async (baseURL, endpoint) => {
     });
 
     const responseData = await response.json();
-    console.log(responseData);
+
     const responseElement = document.getElementById("api-call-result");
 
     responseElement.innerText = JSON.stringify(responseData, {}, 2);

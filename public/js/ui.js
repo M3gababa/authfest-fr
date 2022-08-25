@@ -64,10 +64,12 @@ const updateUI = async () => {
       const access = await auth0.getTokenSilently();
 
       const accessJWT = parseJwt(access);
+      
+      console.log(accessJWT)
 
       if (accessJWT) {
         document.getElementById("ipt-access-token").innerText = JSON.stringify(
-          access,
+          accessJWT,
           null,
           2
         );
@@ -125,7 +127,6 @@ function parseJwt(token) {
       .atob(base64)
       .split("")
       .map(function (c) {
-        console.log(c);
         return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
       })
       .join("")
