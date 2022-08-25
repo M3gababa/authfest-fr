@@ -64,13 +64,13 @@ const updateUI = async () => {
       const access = parseJwt(await auth0.getTokenSilently());
       
       const user = await auth0.getUser();
-/*
+
       document.getElementById("ipt-access-token").innerText = JSON.stringify(
         access,
         null,
         2
       );
-*/
+
       document.getElementById("ipt-user-profile").innerText = JSON.stringify(
         user,
         null,
@@ -111,9 +111,11 @@ window.onpopstate = (e) => {
 function parseJwt (token) {
     var base64Url = token.split('.')[1];
     var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    console.log(base64)
     var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+      console.log(c)
         return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
     }).join(''));
-
-    return JSON.parse(jsonPayload);
+    return jsonPayload
+    //return JSON.parse(jsonPayload);
 };
