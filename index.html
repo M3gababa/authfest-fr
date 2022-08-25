@@ -193,11 +193,9 @@
                 <h6 class="mb-3">Challenge 2: Protect The API</h6>
 
                 <div>
-                  <h1>External API</h1>
+                  <label>Public API</label>
                   <p>
-                    Ping an external API by clicking the button below. This will
-                    call the external API using an access token, and the API
-                    will validate it using the API's audience value.
+                    The first API is available to any calls, even without authentication.
                   </p>
 
                   <p class="mb-5">
@@ -207,6 +205,10 @@
                       >Ping Public API</a
                     >
                   </p>
+<label>Private API</label>
+                  <p>
+                    The second API requires authentication, and will only respond successfully with an access token from the configured tenant.
+                  </p>
                   <p class="mb-5">
                     <a
                       onclick="callApi(baseAPIUrl, '/api/private')"
@@ -215,6 +217,11 @@
                     >
                   </p>
                   <p class="mb-5">
+                    <label>Access API</label>
+                  <p>
+                    The last API not only requires authentication, but also requires the process authorization in the access token.
+                  </p>
+
                     <a
                       onclick="callApi(baseAPIUrl, '/api/access')"
                       class="btn btn-primary mt-5"
