@@ -170,23 +170,25 @@
             <h2 class="my-5 text-center">Congratulations, you've logged in!</h2>
 
             <div class="row">
+              <!-- Begin Challenge 1: Token Section -->
               <div id="challenge1Section" class="col-md-6 mb-4">
-                <h6 class="mb-3">Challenge 1: Custom Application Sign-on</h6>
+                <h4 class="mb-3">Challenge 1: Custom Application Sign-on</h4>
                 <p>
                   You're seeing this content because you're currently
                   <strong>logged in</strong>.
                 </p>
                 <label>
-                  Access token:
+                  <h5>Access token:</h5>
                   <pre class="rounded">
                 <code id="ipt-access-token" class="json"></code></pre>
                 </label>
                 <label>
-                  User profile:
+                  <h5>User profile:</h5>
                   <pre class="rounded">
                 <code id="ipt-user-profile" class="json"></code></pre>
                 </label>
               </div>
+              <!-- End Challenge 1: Token Section -->
 
               <!-- Begin Challenge 2: API Section -->
               <div id="challenge2Section" class="col-md-6 mb-4">
@@ -195,9 +197,9 @@
                 <div>
                   <label>Public API</label>
                   <p>
-                    The first API is available to any calls, even without authentication.
+                    The first API is available to any calls, even without
+                    authentication.
                   </p>
-
                   <p class="mb-5">
                     <a
                       onclick="callApi(baseAPIUrl, '/api/public')"
@@ -205,9 +207,11 @@
                       >Ping Public API</a
                     >
                   </p>
-<label>Private API</label>
+                  <label>Private API</label>
                   <p>
-                    The second API requires authentication, and will only respond successfully with an access token from the configured tenant.
+                    The second API requires authentication, and will only
+                    respond successfully with an access token from the
+                    configured tenant.
                   </p>
                   <p class="mb-5">
                     <a
@@ -216,12 +220,12 @@
                       >Ping Private API</a
                     >
                   </p>
-                  <p class="mb-5">
-                    <label>Access API</label>
+                  <label>Access API</label>
                   <p>
-                    The last API not only requires authentication, but also requires the process authorization in the access token.
+                    The last API not only requires authentication, but also
+                    requires the process authorization in the access token.
                   </p>
-
+                  <p class="mb-5">
                     <a
                       onclick="callApi(baseAPIUrl, '/api/access')"
                       class="btn btn-primary mt-5"
@@ -284,7 +288,7 @@
     <script src="js/app.js"></script>
     <script type="text/javascript">
       //Challenge 2: Set Glitch API URL here
-      var baseAPIUrl = "https://funauth-cic-api.glitch.me";
+      var baseAPIUrl = "https://funauth-cic-api-wc.glitch.me";
     </script>
   </body>
 </html>
