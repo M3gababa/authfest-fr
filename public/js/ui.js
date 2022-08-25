@@ -65,8 +65,6 @@ const updateUI = async () => {
 
       const accessJWT = parseJwt(access);
       
-      console.log(accessJWT)
-
       if (accessJWT) {
         document.getElementById("ipt-access-token").innerText = JSON.stringify(
           accessJWT,
