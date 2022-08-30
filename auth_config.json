@@ -1,5 +1,5 @@
 {
-  "domain": "dev-b0ts4i4r.us.auth0.com",
-  "clientId": "EtfI45iM3HDDpb49Dch0cLZ1eoQPv9rp",
-  "audience": "api://auth.rocks"  
+  "domain": "Enter Auth0 tenant domain here",
+  "clientId": "Enter Auth0 app clientId here",
+  "audience": "Enter API audience here"  
 }
