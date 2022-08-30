@@ -26,17 +26,28 @@ It is part of the Auth Rocks developer workshop presented by [Okta](https://okta
 
 3. Uncomment `audience: config.audience` (around line 55) in **/public/js/app.js**.
 
-## License
+
+---
+
+
+### License
 
 This project is licensed under the MIT license. See the [LICENSE](LICENSE.txt) file for more info.
 
-## Changelog
+### Changelog
 
-### 1.1 - 2022-08-30
-- Authorization API call
+#### 1.1 - 2022-08-30
+- Authorization API call scope check added
 
-### 1.0 - 2022-08-25
-- Authentication on refresh maintained
+#### 1.0 - 2022-08-25
+- Authentication on refresh fixed
+- UI cleaned up to properly display tokens and API responses
 
-### 0.9 - 2022-08-23
-- Authentication to 
+#### 0.9 - 2022-08-24
+- API calls added
+- Audience added to access token
+- CORS added
+- Private API call fixed
+
+#### 0.8 - 2022-08-23
+- Authentication to tenant
