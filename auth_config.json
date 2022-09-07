@@ -1,0 +1,5 @@
+{
+  "domain": "Enter Auth0 tenant domain here",
+  "clientId": "Enter Auth0 app clientId here",
+  "audience": "Enter API audience here"  
+}
