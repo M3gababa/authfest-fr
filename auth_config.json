@@ -1,5 +1,5 @@
 {
   "domain": "Enter CIC tenant domain here",
-  "clientId": "Enter the clientId here",
+  "clientId": "Enter clientId here",
   "audience": "Enter API audience here"  
 }
