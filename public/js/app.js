@@ -95,8 +95,11 @@ const callApi = async (baseURL, endpoint) => {
     document.querySelectorAll("pre code").forEach(hljs.highlightBlock);
 
     eachElement(".result-block", (c) => c.classList.add("show"));
+    
+    location.href = "/#anchor-results";
   } catch (e) {
     console.error(e);
+    alert("Unable to access API or API is not configured correctly.  Check the 'baseAPIUrl' in the 'index.html' file and your glitch API app");
   }
 };
 
