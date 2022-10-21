@@ -1,4 +1,4 @@
-// The Auth0 client, initialized in configureClient()
+%// The Auth0 client, initialized in configureClient()
 let auth0 = null;
 
 /**
