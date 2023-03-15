@@ -1,5 +1,5 @@
 {
-  "domain": "Enter CIC tenant domain here",
-  "clientId": "Enter clientId here",
-  "audience": "Enter API audience here"  
+  "domain": "dev-0vxuabd2.eu.auth0.com",
+  "clientId": "NGLSYKXIDWiMzRmsDKUndHaXPMHj9JTr",
+  "audience": "api://authfest/"  
 }
