@@ -52,7 +52,7 @@ const configureClient = async () => {
     domain: config.domain,
     client_id: config.clientId,
     // Uncomment the line below to add the API audience to the token
-    audience: config.audience,
+    //audience: config.audience,
     useRefreshTokens: true,
     cacheLocation: 'localstorage'
   });
