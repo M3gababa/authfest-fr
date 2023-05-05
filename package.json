@@ -14,11 +14,13 @@
     "nodemon": "^1.19.4"
   },
   "dependencies": {
-    "express": "^4.18.1",
+    "express": "^4.18.2",
     "helmet": "^3.23.3",
     "morgan": "^1.10.0",
     "express-jwt": "^7.7.5",
     "jwks-rsa": "^2.1.4",
-    "jose": "^4.9.0"
+    "jose": "^4.9.0",
+    "express-jwt-authz": "^2.4.1",
+    "cors": "^2.8.5"
   }
 }
