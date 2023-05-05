@@ -1,5 +1,5 @@
 {
-  "domain": "dev-0vxuabd2.eu.auth0.com",
-  "clientId": "NGLSYKXIDWiMzRmsDKUndHaXPMHj9JTr",
-  "audience": "api://authfest/"  
+  "domain": "placeholder-domain.eu.auth0.com",
+  "clientId": "ThisIsAPlaceHolderClientId",
+  "audience": "Enter API audience here"    
 }
