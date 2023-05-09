@@ -1,4 +1,4 @@
-# Authfest UI
+# Authfest app
 
 This Glitch app is based on the [Auth0 SPA JS Login Quickstart](https://github.com/auth0-samples/auth0-javascript-samples/tree/master/01-Login) and the [Auth0 Calling an API Quickstart](https://github.com/auth0-samples/auth0-javascript-samples/tree/master/02-Calling-an-API).
 
