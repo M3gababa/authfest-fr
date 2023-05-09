@@ -1,5 +1,6 @@
 {
   "domain": "placeholder-domain.eu.auth0.com",
   "clientId": "ThisIsAPlaceHolderClientId",
-  "audience": "Enter API audience here"    
+  "audience": "Enter API audience here",
+  "permissions": ["Enter permission scope here"]
 }

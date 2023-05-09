@@ -1,5 +1,0 @@
-{
-  "domain": "Enter CIC tenant domain here",
-  "audience": "Enter API audience here",
-  "permissions": ["Enter permission scope here"]
-}

@@ -2,28 +2,26 @@ const { expressjwt: jwt } = require("express-jwt");
 const jwksRsa = require("jwks-rsa");
 const jwtAuthz = require("express-jwt-authz");
 const { join } = require("path");
-const apiAuthConfig = require("./api_auth_config.json");
+const authConfig = require("./auth_config.json");
 
 module.exports = function(app){
-    if (!apiAuthConfig.domain || !apiAuthConfig.audience) {
-        console.log("Please make sure that api_auth_config.json is in place and populated")
+    if (!authConfig.domain || !authConfig.audience) {
+        console.log("Please make sure that auth_config.json is in place and populated")
     }
-    else {
-
-    }
+    
     const checkJwt = jwt({
     secret: jwksRsa.expressJwtSecret({
         cache: true,
         rateLimit: true,
         jwksRequestsPerMinute: 5,
-        jwksUri: `https://${apiAuthConfig.domain}/.well-known/jwks.json`,
+        jwksUri: `https://${authConfig.domain}/.well-known/jwks.json`,
     }),
-    audience: apiAuthConfig.audience,
-    issuer: `https://${apiAuthConfig.domain}/`,
+    audience: authConfig.audience,
+    issuer: `https://${authConfig.domain}/`,
     algorithms: ["RS256"],
     });
 
-    const checkPermissions = jwtAuthz(apiAuthConfig.permissions, {
+    const checkPermissions = jwtAuthz(authConfig.permissions, {
         customUserKey: "auth",
         customScopeKey: "permissions",
         failWithError: true,
