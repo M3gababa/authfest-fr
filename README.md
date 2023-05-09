@@ -1,6 +1,8 @@
 # Authfest app
 
-This Glitch app is based on the [Auth0 SPA JS Login Quickstart](https://github.com/auth0-samples/auth0-javascript-samples/tree/master/01-Login) and the [Auth0 Calling an API Quickstart](https://github.com/auth0-samples/auth0-javascript-samples/tree/master/02-Calling-an-API).
+UI: This Glitch app is based on the [Auth0 SPA JS Login Quickstart](https://github.com/auth0-samples/auth0-javascript-samples/tree/master/01-Login) and the [Auth0 Calling an API Quickstart](https://github.com/auth0-samples/auth0-javascript-samples/tree/master/02-Calling-an-API).
+
+API: This Glitch app is based on the [Auth0 Calling an API Quickstart](https://github.com/auth0-samples/auth0-javascript-samples/tree/master/02-Calling-an-API).
 
 It is part of the Authfest developer workshop presented by [Okta](https://okta.com)
 
@@ -10,7 +12,8 @@ It is part of the Authfest developer workshop presented by [Okta](https://okta.c
 {
   "domain": "{DOMAIN}",
   "clientId": "{CLIENT_ID}",
-  "audience": "{API_AUDIENCE}"
+  "audience": "{API_AUDIENCE}",
+  "permissions": ["Enter permission scope here"]
 }
 ```
 
@@ -18,7 +21,7 @@ It is part of the Authfest developer workshop presented by [Okta](https://okta.c
 
 1. Copy the {DOMAIN} and {CLIENT_ID} from the SPA app created in your tenant and paste in the **auth_config.json** file.
 
-### Challenge 2
+### Challenge 2-3
 
 1. Copy the {API_AUDIENCE} from the API create in your tenant and paste in the **auth_config.json** file.
 
@@ -26,9 +29,7 @@ It is part of the Authfest developer workshop presented by [Okta](https://okta.c
 
 3. Uncomment `audience: config.audience` (around line 55) in **/public/js/app.js**.
 
-
 ---
-
 
 ### License
 
@@ -37,17 +38,21 @@ This project is licensed under the MIT license. See the [LICENSE](LICENSE.txt) f
 ### Changelog
 
 #### 1.1 - 2022-08-30
+
 - Authorization API call scope check added
 
 #### 1.0 - 2022-08-25
+
 - Authentication on refresh fixed
 - UI cleaned up to properly display tokens and API responses
 
 #### 0.9 - 2022-08-24
+
 - API calls added
 - Audience added to access token
 - CORS added
 - Private API call fixed
 
 #### 0.8 - 2022-08-23
+
 - Authentication to tenant
